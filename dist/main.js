@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("Hola mundo"),console.log('\n\t\t<div class="Amiibos">\n\t\t\t<article class="Amiibo-item">\n\t\t\t\t<a hred="#/1/">\n\t\t\t\t\t<img src="image" alt="name">\n\t\t\t\t\t<h2>Name</h2>\n\t\t\t\t</a>\n\t\t\t</article>\n\t\t</div>\n\t')})();
