@@ -2,7 +2,7 @@ const Header = () => {
 	const view = `
 		<div class="header__logo">
 			<h1>
-				<a href="/">
+				<a href="/amiiview-spa/#">
 					Amiiview
 				</a>
 			</h1>
