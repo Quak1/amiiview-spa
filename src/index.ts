@@ -1,4 +1,6 @@
-import Home from "./pages/Home";
+import router from "./routes/index"
 
 console.log("Hola mundo");
-console.log(Home());
+
+window.addEventListener('load', router);
+window.addEventListener('hashchange', router)
