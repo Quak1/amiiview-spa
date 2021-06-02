@@ -1,3 +1,5 @@
+import amiiboType from '../utils/amiiboType';
+
 const Amiibo = () => {
 	const view = `
 		<div class="Amiibo-inner">

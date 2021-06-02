@@ -26,8 +26,7 @@ const router = async () => {
 	let route = await resolveRoutes(hash);
 
 	let render = hasKey(routes, route) ? routes[route] : Error404;
-
-	content!.innerHTML = render() as string;
+	content!.innerHTML = await render() as string;
 };
 
 export default router;
