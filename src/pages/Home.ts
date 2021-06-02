@@ -13,7 +13,7 @@ const Home = async () => {
 						<h2>${amiibo.character} from ${amiibo.amiiboSeries}</h2>
 					</a>
 			</article>
-		`)}
+		`).join("")}
 		</div>
 	`;
 	return view;
