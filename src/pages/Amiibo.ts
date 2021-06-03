@@ -11,9 +11,6 @@ const Amiibo = async () => {
 
 	const view = `
 		<div class="Amiibo-inner">
-			<a href="#/${serie.amiibo[0].key}/">
-				<h2>Amiibo series: ${serie.amiibo[0].name}</h2>
-			</a>
 			<article class="Amiibo-card">
 				<img src="${amiibo.image}" alt="${amiibo.name} picture">
 				<h2>${amiibo.name}</h2>

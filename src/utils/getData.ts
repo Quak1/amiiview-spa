@@ -1,5 +1,4 @@
 const API = 'https://www.amiiboapi.com/api/';
-// const API = "https://rickandmortyapi.com/api/character";
 
 const getData = async (id?: string) => {
 	const apiURL = id ? `${API}${id}` : API;
