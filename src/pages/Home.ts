@@ -1,5 +1,4 @@
 import getData from '../utils/getData';
-import amiiboType from "../utils/amiiboType";
 
 interface amiiboListType {
 	key: string;
@@ -22,8 +21,8 @@ const makeList = async (series: amiiboListType) => {
 const Home = async () => {
 	const seriesList = await getData('amiiboseries');
 	const view = `
-		<div class="Series">
 		<h2>Available Amiibo Series:</h2>
+		<div class="Series">
 		${(await Promise.all(
 			seriesList.amiibo.map(
 				async (series: amiiboListType) => makeList(series)))).join("")}

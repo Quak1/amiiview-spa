@@ -2,3 +2,17 @@ body {
 	background-color: grey;
 	color: white;
 }
+
+.Series {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 15px;
+	row-gap: 15px;
+
+	.Series-item {
+		background-color: #555;
+		img {
+			width: 250px;
+		}
+	}
+}
