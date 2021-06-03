@@ -1,1 +1,17 @@
-body{background-color:gray;color:#fff}.Series{display:grid;grid-template-columns:repeat(3, 1fr);column-gap:15px;row-gap:15px}.Series .Series-item{background-color:#555}.Series .Series-item img{width:250px}
+body {
+  background-color: grey;
+  color: white;
+}
+
+.Series {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 15px;
+  row-gap: 15px;
+}
+.Series .Series-item {
+  background-color: #555;
+}
+.Series .Series-item img {
+  width: 250px;
+}
