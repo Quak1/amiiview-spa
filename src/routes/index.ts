@@ -4,10 +4,12 @@ import Amiibo from '../pages/Amiibo';
 import Error404 from '../pages/Error404';
 import getHash from '../utils/getHash';
 import resolveRoutes from '../utils/resolveRoutes';
+import Series from '../pages/Series'
 
 const routes = {
 	'/': Home,
 	'/:id': Amiibo,
+	'/series': Series,
 	// '/contact': 'Contact',
 };
 

@@ -1,19 +1,32 @@
 import getData from '../utils/getData';
 import amiiboType from "../utils/amiiboType";
 
-const Home = async () => {
-	const amiibos = await getData();
-	console.log(amiibos);
+interface amiiboListType {
+	key: string;
+	name: string;
+};
+
+const makeList = async (series: amiiboListType) => {
+	const amiiboList = await getData(`amiibo/?amiiboSeries=${series.key}`);
+	const firstAmiibo = amiiboList.amiibo[0]
 	const view = `
-		<div class="Amiibos">
-		${amiibos.amiibo.map((amiibo: amiiboType) => `
-			<article class="Amiibo-item">
-				<img src="${amiibo.image}" alt="${amiibo.character} picture">
-					<a href="#/${amiibo.head}${amiibo.tail}/">
-						<h2>${amiibo.character} from ${amiibo.amiiboSeries}</h2>
-					</a>
-			</article>
-		`).join("")}
+		<article class="Series-item">
+			<a href="#/${series.key}/">
+				<h2>${series.name}</h2>
+			</a>
+			<img src="${firstAmiibo.image}" alt="${firstAmiibo.name}">
+		</article>`
+	return view;
+}
+
+const Home = async () => {
+	const seriesList = await getData('amiiboseries');
+	const view = `
+		<div class="Series">
+		<h2>Available Amiibo Series:</h2>
+		${(await Promise.all(
+			seriesList.amiibo.map(
+				async (series: amiiboListType) => makeList(series)))).join("")}
 		</div>
 	`;
 	return view;
