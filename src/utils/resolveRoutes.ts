@@ -1,8 +1,9 @@
 const resolveRoutes = (route: string) => {
-	if (/[a-z]+$/.test(route)){
-		return `/${route}`;
-	} else if (route.startsWith('0x')) {
+	if (route.startsWith('0x')) {
 		return `/series`;
+	}
+	else if (/[a-z]+$/.test(route)){
+		return `/${route}`;
 	}
 
 	return route === '/' ? route : '/:id';
