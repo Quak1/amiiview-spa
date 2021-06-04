@@ -8,7 +8,7 @@ const Series = async () => {
 	const serie = await getData(`amiiboseries/?key=${hash}`);
 
 	const view = `
-		<h2>Amiibo series name: ${serie.amiibo.name}</h2>
+		<h2>Series: ${serie.amiibo.name}</h2>
 		<div class="Card-grid">
 			${amiibos.amiibo.map((amiibo: amiiboType) => `
 				<article class="Card-item">
