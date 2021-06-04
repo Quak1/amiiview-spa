@@ -5,9 +5,9 @@ const Header = () => {
 				<a href="/amiiview-spa/#">
 					Amiiview
 				</a>
-				<a href="/">
+				<!--<a href="/">
 					Amiiview-home
-				</a>
+				</a> -->
 			</h1>
 		</div>
 		<div class="header__nav">

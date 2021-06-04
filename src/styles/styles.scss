@@ -1,11 +1,52 @@
-body {
-	background-color: grey;
-	color: white;
+$background-color: #12263aff;
+$accent-color: #f4d1aeff;
+$accent-secondary: #06bcc1ff;
+$dunno: #c5d8d1ff;
+$main-color: #f4edeaff;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.Series {
+html {
+    font-size: 62.5%;
+}
+
+body {
+	background-color: $background-color;
+	color: $main-color;
+	font-size: 1.6rem;
+
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+img {
+	width: 100%;
+}
+
+a {
+	color: $accent-color;
+	text-decoration: none;
+}
+
+a:hover {
+	color: $accent-secondary;
+	text-decoration: underline;
+}
+
+.Header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 25px;
+}
+
+.Card-grid {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	column-gap: 15px;
 	row-gap: 15px;
 

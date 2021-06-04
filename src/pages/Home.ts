@@ -9,7 +9,7 @@ const makeList = async (series: amiiboListType) => {
 	const amiiboList = await getData(`amiibo/?amiiboSeries=${series.key}`);
 	const firstAmiibo = amiiboList.amiibo[0]
 	const view = `
-		<article class="Series-item">
+		<article class="Card-item">
 			<a href="#/${series.key}/">
 				<h2>${series.name}</h2>
 			</a>
@@ -22,7 +22,7 @@ const Home = async () => {
 	const seriesList = await getData('amiiboseries/');
 	const view = `
 		<h2>Available Amiibo Series:</h2>
-		<div class="Series">
+		<div class="Card-grid">
 		${(await Promise.all(
 			seriesList.amiibo.map(
 				async (series: amiiboListType) => makeList(series)))).join("")}
