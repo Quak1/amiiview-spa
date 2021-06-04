@@ -5,6 +5,7 @@ import Error404 from '../pages/Error404';
 import getHash from '../utils/getHash';
 import resolveRoutes from '../utils/resolveRoutes';
 import Series from '../pages/Series'
+import Loading from "../templates/Loading"
 
 const routes = {
 	'/': Home,
@@ -22,7 +23,9 @@ function hasKey<O>(obj: O, key: PropertyKey): key is keyof O {
 const router = async () => {
 	const header = document.getElementById('header');
 	const content = document.getElementById('content');
+	const loading = document.getElementById('loading');
 
+	loading!.innerHTML = Loading();
 	header!.innerHTML = await Header();
 	let hash = getHash();
 	let route = await resolveRoutes(hash);
