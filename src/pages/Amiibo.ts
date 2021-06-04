@@ -10,10 +10,10 @@ const Amiibo = async () => {
 	const serie = await getData(`amiiboseries/?name=${amiibo.amiiboSeries}`);
 
 	const view = `
+		<a href="#/${serie.amiibo[0].key}/">
+			<h2>Amiibo series: ${serie.amiibo[0].name}</h2>
+		</a>
 		<div class="Amiibo">
-			<a href="#/${serie.amiibo[0].key}/">
-				<h2>Amiibo series: ${serie.amiibo[0].name}</h2>
-			</a>
 			<article class="Amiibo__image">
 				<img src="${amiibo.image}" alt="${amiibo.name} picture">
 			</article>

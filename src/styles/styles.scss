@@ -7,6 +7,13 @@ $accent-secondary: #f4d1aeff;
 $dunno: #c5d8d1ff;
 $main-color: #f4edeaff;
 
+@mixin card() {
+	background-color: rgba(0,0,0,0.2);
+	border-radius: 25px;
+	padding: 13px;
+	box-shadow: 0 0 10px black;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -67,10 +74,7 @@ a:hover {
 	margin-top: 20px;
 
 	.Card-item {
-		background-color: rgba(0,0,0,0.2);
-		border-radius: 25px;
-		padding: 13px;
-		box-shadow: 0 0 10px black;
+		@include card;
 		text-align: center;
 		h2 {
 			padding-bottom: 13px;
@@ -80,4 +84,11 @@ a:hover {
 			padding-top: 15px;
 		}
 	}
+}
+
+.Amiibo {
+	@include card;
+	display: flex;
+	max-width: 700px;
+	margin: 0 auto;
 }
