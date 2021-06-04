@@ -7,7 +7,7 @@ const Amiibo = async () => {
 	const data = await getData(`amiibo/?id=${hash}`);
 	const amiibo: amiiboType = data.amiibo;
 
-	const serie = await getData(`amiiboseries?name=${amiibo.amiiboSeries}`);
+	const serie = await getData(`amiiboseries/?name=${amiibo.amiiboSeries}`);
 
 	const view = `
 		<div class="Amiibo-inner">

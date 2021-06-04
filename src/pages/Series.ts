@@ -5,7 +5,7 @@ import getHash from '../utils/getHash';
 const Series = async () => {
 	const hash = getHash();
 	const amiibos = await getData(`amiibo/?amiiboSeries=${hash}`);
-	const serie = await getData(`amiiboseries?key=${hash}`);
+	const serie = await getData(`amiiboseries/?key=${hash}`);
 
 	const view = `
 		<div class="Amiibos">
