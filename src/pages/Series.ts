@@ -8,14 +8,14 @@ const Series = async () => {
 	const serie = await getData(`amiiboseries/?key=${hash}`);
 
 	const view = `
-		<h2>Amiibo Series: ${serie.amiibo.name}</h2>
+		<h2>Amiibo series name: ${serie.amiibo.name}</h2>
 		<div class="Card-grid">
 			${amiibos.amiibo.map((amiibo: amiiboType) => `
 				<article class="Card-item">
+					<a href="#/${amiibo.head}${amiibo.tail}/">
+						<h2>${amiibo.name}</h2>
+					</a>
 					<img src="${amiibo.image}" alt="${amiibo.character} picture">
-						<a href="#/${amiibo.head}${amiibo.tail}/">
-							<h2>${amiibo.character} from ${amiibo.gameSeries}</h2>
-						</a>
 				</article>
 			`).join("")}
 		</div>
