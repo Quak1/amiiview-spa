@@ -19,7 +19,7 @@ const makeList = async (series: amiiboListType) => {
 }
 
 const Home = async () => {
-	const seriesList = await getData('amiiboseries');
+	const seriesList = await getData('amiiboseries/');
 	const view = `
 		<h2>Available Amiibo Series:</h2>
 		<div class="Series">
