@@ -10,7 +10,7 @@ const Amiibo = async () => {
 	const serie = await getData(`amiiboseries/?name=${amiibo.amiiboSeries}`);
 
 	const view = `
-		<a href="#/${serie.amiibo[0].key}/">
+		<a href="#/${serie.amiibo[0].key}/" id="Amiibo-card-series">
 			<h2>Amiibo series: ${serie.amiibo[0].name}</h2>
 		</a>
 		<div class="Amiibo">
@@ -19,12 +19,20 @@ const Amiibo = async () => {
 			</article>
 			<article class="Amiibo__info">
 				<h2>${amiibo.name}</h2>
-				<h3>Character: ${amiibo.character}</h3>
-				<h3>Game Series: ${amiibo.gameSeries}</h3>
-				<h3>Release Dates: <br>${Object.entries(amiibo.release).map((entry) => `
-					${entry[0]}: ${entry[1]}<br>
-				`).join("")}</h3>
-				<h3>Amiibo Type: ${amiibo.type}</h3>
+				<h3>Character:</h3> ${amiibo.character}
+				<h3>Game Series:</h3> ${amiibo.gameSeries}
+				<h3>Release Dates:</h3>
+					<ul>
+					${Object.entries(amiibo.release).filter(entry => {
+						if (entry[1] === null) {
+							return false;
+						}
+						return true;
+					}).map((entry) => `
+						<li>${entry[0]}: ${entry[1]}</li>
+					`).join("")}
+					</ul>
+				<h3>Amiibo Type:</h3> ${amiibo.type}
 			</article>
 		</div>
 	`;

@@ -7,6 +7,8 @@ $accent-secondary: #f4d1aeff;
 $dunno: #c5d8d1ff;
 $main-color: #f4edeaff;
 
+$layout-breakpoint-small: 600px;
+
 @mixin card() {
 	background-color: rgba(0,0,0,0.2);
 	border-radius: 25px;
@@ -86,9 +88,38 @@ a:hover {
 	}
 }
 
+#Amiibo-card-series {
+	text-align: center;
+}
+
 .Amiibo {
 	@include card;
 	display: flex;
-	max-width: 700px;
-	margin: 0 auto;
+	flex-direction: column;
+	// align-items: center;
+	width: fit-content;
+	margin: 25px auto;
+
+	&__info {
+		// margin-left: 20px;
+		padding: 0 20px;
+
+		h2 {
+			font-size: 3.5rem;
+		}
+
+		h3 {
+			margin-top: 15px;
+		}
+
+		ul {
+			padding-left: 20px;
+		}
+	}
+}
+
+@media (min-width: $layout-breakpoint-small) {
+	.Amiibo {
+		flex-direction: row;
+	}
 }
