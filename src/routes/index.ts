@@ -23,9 +23,11 @@ function hasKey<O>(obj: O, key: PropertyKey): key is keyof O {
 const router = async () => {
 	const header = document.getElementById('header');
 	const content = document.getElementById('content');
-	const loading = document.getElementById('loading');
 
-	loading!.innerHTML = Loading();
+	const loading = document.getElementById('loading');
+	const loadingElement = document.createElement(Loading());
+	content?.insertAdjacentElement('afterbegin', loadingElement);
+
 	header!.innerHTML = await Header();
 	let hash = getHash();
 	let route = await resolveRoutes(hash);
