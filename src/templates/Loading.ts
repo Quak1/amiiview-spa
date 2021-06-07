@@ -1,8 +1,10 @@
 const Loading = () => {
-	const view = `
-		<h3>Loading</h3>
-	`;
-	return view;
+	const element = document.createElement("h3");
+	element.innerText = "Loading";
+
+	element.id = "loading";
+
+	return element;
 };
 
 export default Loading;

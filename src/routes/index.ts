@@ -24,9 +24,7 @@ const router = async () => {
 	const header = document.getElementById('header');
 	const content = document.getElementById('content');
 
-	const loading = document.getElementById('loading');
-	const loadingElement = document.createElement(Loading());
-	content?.insertAdjacentElement('afterbegin', loadingElement);
+	content?.insertAdjacentElement('afterbegin', Loading());
 
 	header!.innerHTML = await Header();
 	let hash = getHash();
