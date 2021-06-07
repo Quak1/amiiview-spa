@@ -124,3 +124,13 @@ a:hover {
 		flex-direction: row;
 	}
 }
+
+#loading {
+	position: fixed;
+	top: 50px;
+	display: inline-block;
+	margin: 0 auto;
+	width: 200px;
+	height: 200px;
+	background-color: black;
+}
