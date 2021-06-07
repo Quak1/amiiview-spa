@@ -11,7 +11,7 @@ const Header = () => {
 			</h1>
 		</div>
 		<div class="header__nav">
-			<a href="#/about/">
+			<a href="https://www.amiiboapi.com/docs/">
 				About
 			</a>
 		</div>
